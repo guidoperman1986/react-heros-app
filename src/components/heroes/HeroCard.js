@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const heroImages = require.context('../../assets/heroes', true);
+
 export const HeroCard = ({
     id,
     superhero,
@@ -8,12 +10,12 @@ export const HeroCard = ({
     first_appearance,
     characters,
 }) => {
-
     return (
         <div className="card ms-3 animate__animated animate__fadeIn" style={ { maxWidth: 540 } }>
             <div className="row no-gutters">
                 <div className="col-md-4">
-                    <img src={ `./assets/heroes/${ id }.jpg` } className="card-img" alt={ superhero } />
+                    {/* <img src={ `./assets/heroes/${ id }.jpg` } className="card-img" alt={ superhero } /> */}
+                    <img src={ heroImages(`./${ id }.jpg`) } className="card-img" alt={ superhero } />
                 </div>
                 <div className="col-md-8">
                     
